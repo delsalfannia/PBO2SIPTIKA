@@ -38,7 +38,7 @@ class home(index1.panel_home):
     def BeliTiket(self,event):
         self.nama = self.input_nama.GetValue()
         self.tanggal_keberangkatan = self.input_tanggal.GetValue()
-        self.waktu = self.input_waktu.GetCurrentSelection()
+        self.waktu = self.input_waktu.GetValue()
         self.jumlah_penumpang = self.input_jumlahPenumpang.GetValue()
         harga = int(self.jumlah_penumpang) * 30000
         query = "INSERT INTO data_tiket (nama, tanggal_keberangkatan, waktu, jumlah_penumpang, harga) VALUES ('{}','{}','{}','{}', '{}')".format(
