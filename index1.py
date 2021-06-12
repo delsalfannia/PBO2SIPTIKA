@@ -24,7 +24,7 @@ class MyFrame1 ( wx.Frame ):
 		bSizer1 = wx.BoxSizer( wx.VERTICAL )
 
 		self.panel_login = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.panel_login.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.panel_login.SetBackgroundColour( wx.Colour( 198, 132, 219 ) )
 
 		bSizer2 = wx.BoxSizer( wx.VERTICAL )
 
@@ -122,7 +122,7 @@ class panel_home ( wx.Panel ):
 	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 1080,720 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
-		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+		self.SetBackgroundColour( wx.Colour( 213, 163, 228 ) )
 
 		bSizer3 = wx.BoxSizer( wx.VERTICAL )
 
@@ -131,7 +131,7 @@ class panel_home ( wx.Panel ):
 
 		self.m_staticText18.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "COCOGOOSE" ) )
 
-		bSizer3.Add( self.m_staticText18, 0, wx.ALL, 5 )
+		bSizer3.Add( self.m_staticText18, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.btn_logout = wx.Button( self, wx.ID_ANY, u"Logout", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.btn_logout.SetFont( wx.Font( 14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "COCOGOOSE" ) )
@@ -181,9 +181,8 @@ class panel_home ( wx.Panel ):
 
 		gSizer1.Add( self.text_waktu, 0, wx.ALL, 5 )
 
-		input_waktuChoices = [ u"07.00", u"12.00", u"17.00", u"21.00", u"24.00", wx.EmptyString ]
-		self.input_waktu = wx.Choice( self.panel_beli, wx.ID_ANY, wx.DefaultPosition, wx.Size( 350,-1 ), input_waktuChoices, 0 )
-		self.input_waktu.SetSelection( 1 )
+		input_waktuChoices = [ u"07.00", u"12.00", u"17.00", u"20.00", u"24.00" ]
+		self.input_waktu = wx.ComboBox( self.panel_beli, wx.ID_ANY, u"Waktu", wx.DefaultPosition, wx.Size( 350,-1 ), input_waktuChoices, 0 )
 		self.input_waktu.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Comic Sans MS" ) )
 
 		gSizer1.Add( self.input_waktu, 0, wx.ALL, 5 )
@@ -222,7 +221,7 @@ class panel_home ( wx.Panel ):
 		self.panel_beli.SetSizer( gSizer1 )
 		self.panel_beli.Layout()
 		gSizer1.Fit( self.panel_beli )
-		self.panel_home1.AddPage( self.panel_beli, u"Beli Tiket", False )
+		self.panel_home1.AddPage( self.panel_beli, u"Beli Tiket", True )
 		self.panel_lihatTiket = wx.Panel( self.panel_home1, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer6 = wx.BoxSizer( wx.VERTICAL )
 
@@ -499,7 +498,7 @@ class panel_home ( wx.Panel ):
 		self.panel_profil.SetSizer( gSizer4 )
 		self.panel_profil.Layout()
 		gSizer4.Fit( self.panel_profil )
-		self.panel_home1.AddPage( self.panel_profil, u"Profil Saya", True )
+		self.panel_home1.AddPage( self.panel_profil, u"Profil Saya", False )
 
 		bSizer3.Add( self.panel_home1, 1, wx.EXPAND |wx.ALL, 5 )
 
@@ -539,6 +538,8 @@ class panel_regis ( wx.Panel ):
 
 	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 1080,720 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
+
+		self.SetBackgroundColour( wx.Colour( 248, 146, 230 ) )
 
 		gSizer2 = wx.GridSizer( 0, 2, 0, 0 )
 
@@ -585,7 +586,7 @@ class panel_regis ( wx.Panel ):
 		gSizer2.Add( self.text_nomortelepon, 0, wx.ALL, 5 )
 
 		self.m_textCtrl19 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,-1 ), 0 )
-		self.m_textCtrl19.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "COCOGOOSE" ) )
+		self.m_textCtrl19.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Comic Sans MS" ) )
 
 		gSizer2.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
 
@@ -597,7 +598,7 @@ class panel_regis ( wx.Panel ):
 		gSizer2.Add( self.text_kota, 0, wx.ALL, 5 )
 
 		self.input_kota = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,-1 ), 0 )
-		self.input_kota.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "COCOGOOSE" ) )
+		self.input_kota.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Comic Sans MS" ) )
 
 		gSizer2.Add( self.input_kota, 0, wx.ALL, 5 )
 
@@ -609,7 +610,7 @@ class panel_regis ( wx.Panel ):
 		gSizer2.Add( self.text_email, 0, wx.ALL, 5 )
 
 		self.input_email = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,-1 ), 0 )
-		self.input_email.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "COCOGOOSE" ) )
+		self.input_email.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Comic Sans MS" ) )
 
 		gSizer2.Add( self.input_email, 0, wx.ALL, 5 )
 
@@ -621,7 +622,7 @@ class panel_regis ( wx.Panel ):
 		gSizer2.Add( self.text_username, 0, wx.ALL, 5 )
 
 		self.input_username = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,-1 ), 0 )
-		self.input_username.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "COCOGOOSE" ) )
+		self.input_username.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Comic Sans MS" ) )
 
 		gSizer2.Add( self.input_username, 0, wx.ALL, 5 )
 
@@ -633,7 +634,7 @@ class panel_regis ( wx.Panel ):
 		gSizer2.Add( self.text_password, 0, wx.ALL, 5 )
 
 		self.input_password = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 350,-1 ), 0 )
-		self.input_password.SetFont( wx.Font( 20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "COCOGOOSE" ) )
+		self.input_password.SetFont( wx.Font( 20, wx.FONTFAMILY_SCRIPT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "Comic Sans MS" ) )
 
 		gSizer2.Add( self.input_password, 0, wx.ALL, 5 )
 
